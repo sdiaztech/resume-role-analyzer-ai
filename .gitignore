@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Datasets
+datasets/raw/*
+datasets/interim/*
+datasets/processed/*
+!datasets/raw/.gitkeep
+!datasets/interim/.gitkeep
+!datasets/processed/.gitkeep
+
+# Models
+models/*
+!models/.gitkeep
+
+# macOS
+.DS_Store
