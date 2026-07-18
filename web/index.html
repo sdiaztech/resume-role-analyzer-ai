@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover roles that match your resume and skills.">
+  <title>Rolewise — Resume Role Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Rolewise home">
+      <span class="brand-mark">R</span>
+      <span>rolewise</span>
+    </a>
+    <span class="privacy-note"><span class="status-dot"></span>Your resume stays private</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">AI-powered career matching</p>
+      <h1 id="hero-title">Find the role your<br><span>experience points to.</span></h1>
+      <p class="hero-copy">Upload your resume and get clear, explainable job recommendations based on the skills you already have.</p>
+
+      <form id="upload-form" class="upload-card">
+        <label id="drop-zone" class="drop-zone" for="resume-file">
+          <input id="resume-file" name="file" type="file" accept=".pdf,.docx,.txt" required>
+          <span class="upload-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="drop-title">Drop your resume here</span>
+          <span class="drop-subtitle">or <strong>choose a file</strong> from your computer</span>
+          <span class="file-rules">PDF, DOCX, or TXT · Maximum 5 MB</span>
+        </label>
+        <div id="selected-file" class="selected-file" hidden>
+          <span class="file-badge">DOC</span>
+          <span class="file-meta"><strong id="file-name"></strong><small id="file-size"></small></span>
+          <button id="remove-file" type="button" aria-label="Remove selected file">×</button>
+        </div>
+        <button id="analyze-button" class="primary-button" type="submit" disabled>
+          <span class="button-label">Analyze my resume</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <p id="form-message" class="form-message" role="alert"></p>
+      </form>
+
+      <div class="trust-row" aria-label="Product benefits">
+        <span>✓ No account required</span>
+        <span>✓ Explainable matching</span>
+        <span>✓ Deleted after analysis</span>
+      </div>
+    </section>
+
+    <section id="results" class="results" aria-labelledby="results-title" hidden>
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">Your career matches</p>
+          <h2 id="results-title">Roles worth exploring</h2>
+        </div>
+        <button id="analyze-another" class="text-button" type="button">Analyze another resume</button>
+      </div>
+      <div id="result-list" class="result-list"></div>
+      <p class="score-note">Match labels summarize semantic relevance and listed skill overlap. They are not hiring probability or a qualification decision.</p>
+    </section>
+  </main>
+
+  <footer>
+    Built with C# and Python · Your file is processed temporarily and removed.<br>
+    Modified occupation data from the
+    <a href="https://www.onetcenter.org/database.html">O*NET 30.3 Database</a> by
+    USDOL/ETA, used under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+    O*NET® is a trademark of USDOL/ETA; USDOL/ETA has not endorsed these modifications.
+  </footer>
+  <script src="app.js?v=4" defer></script>
+</body>
+</html>

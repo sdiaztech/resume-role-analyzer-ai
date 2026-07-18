@@ -1,0 +1,14 @@
+.git
+.vscode
+**/bin
+**/obj
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+ai/.venv
+ai/build
+api.tests
+datasets/external
+datasets/interim
+datasets/processed
+.env*

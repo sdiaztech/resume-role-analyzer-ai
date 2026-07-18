@@ -6,6 +6,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .ipynb_checkpoints/
+*.egg-info/
 
 # .NET
 bin/
@@ -21,15 +22,12 @@ obj/
 
 # Datasets
 datasets/raw/*
-datasets/interim/*
+datasets/external/*
 datasets/processed/*
-!datasets/raw/.gitkeep
-!datasets/interim/.gitkeep
-!datasets/processed/.gitkeep
+!datasets/raw/job_positions.csv
 
 # Models
 models/*
-!models/.gitkeep
 
 # macOS
 .DS_Store
